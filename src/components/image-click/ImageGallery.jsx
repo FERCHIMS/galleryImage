@@ -48,7 +48,7 @@ const ImageGallery = ({ images }) => {
               esto="opacity-100 filter blur-0 contrast-100 invert-0"
               otro="opacity-[45%] filter blur-[2px] contrast-200 invert-[20%] "
               className="  transition-all duration-[1200ms]  "
-              rootMargin="-100px"
+              rootMargin="-50px"
               threshold="0.5"
               key={index}
             >

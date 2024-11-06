@@ -76,7 +76,7 @@ const ImageGallery = ({ images }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.0, ease: 'easeInOut'}}
+              transition={{ duration: 0.1, ease: 'easeInOut'}}
               className={`fixed w-full inset-0 z-20 flex items-center justify-center transition-all duration-[100ms] opacity-100 ${selectedIndex ? " backdrop-grayscale	" : ""} `}
             >
               <div className="relative flex justify-center items-center w-full h-full p-4">

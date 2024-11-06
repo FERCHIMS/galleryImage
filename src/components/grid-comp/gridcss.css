@@ -1,0 +1,17 @@
+.my-masonry-grid {
+    display: flex;
+    padding-top: 10vh;
+    margin-left: -2px; /* Evitar espacio extra en los márgenes */
+    width: auto;
+  }
+  
+  /* Columnas del masonry */
+  .my-masonry-grid_column {
+    /* padding-left: 100px;  */
+    background-clip: padding-box;
+  }
+  
+  /* Evitar márgenes grandes entre las imágenes */
+/*   .my-masonry-grid_column > div {
+    margin-bottom: 2px;
+  } */

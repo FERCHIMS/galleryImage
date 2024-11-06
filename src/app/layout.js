@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/header/Header";
+import LenisScroll from "@/components/lenis-scroll/LenisScroll";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,10 +22,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <LenisScroll>
+        <Header />
         {children}
+      </LenisScroll>
       </body>
     </html>
   );

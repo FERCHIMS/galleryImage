@@ -90,8 +90,10 @@ const ImageGallery = ({ images }) => {
                 >
                   <Image
                     quality={100}
-                    layout="fill"
-                    objectFit="contain"
+                    /* layout="responsive" */
+                    width={500}
+                    height={500}
+                    /* objectFit="contain" */
                     src={images[selectedIndex].src}
                     alt="fotinga"
                     className="relative z-[60] p-2 transition-all duration-[1200ms]"

@@ -27,7 +27,7 @@ const ImageGallery = ({ images }) => {
     setSelectedIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (selectedIndex !== null) {
       document.body.classList.add('overflow-hidden');
     } else {
@@ -36,7 +36,7 @@ const ImageGallery = ({ images }) => {
     return () => {
       document.body.classList.remove('overflow-hidden');
     };
-  }, [selectedIndex]);
+  }, [selectedIndex]); */
 
   return (
     <div className="w-full">
@@ -77,7 +77,7 @@ const ImageGallery = ({ images }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.0, ease: 'easeInOut'}}
-              className={`fixed w-full inset-0 z-20 flex items-center justify-center transition-all duration-[1200ms] opacity-100 ${selectedIndex ? " backdrop-grayscale	" : ""} `}
+              className={`fixed w-full inset-0 z-20 flex items-center justify-center transition-all duration-[100ms] opacity-100 ${selectedIndex ? " backdrop-grayscale	" : ""} `}
             >
               <div className="relative flex justify-center items-center w-full h-full p-4">
                 <AnimComponent

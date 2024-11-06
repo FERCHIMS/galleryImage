@@ -27,7 +27,7 @@ const ImageGallery = ({ images }) => {
     setSelectedIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (selectedIndex !== null) {
       document.body.classList.add('overflow-hidden');
     } else {
@@ -37,7 +37,7 @@ const ImageGallery = ({ images }) => {
       document.body.classList.remove('overflow-hidden');
     };
   }, [selectedIndex]);
- */
+
   return (
     <div className="w-full">
       <div className={`transition-all w-full flex justify-center flex-wrap duration-[1200ms] ${selectedIndex ? "scale-[96%] translate-y-[0.5rem]" : "scale-100 translate-y-0"} `}>

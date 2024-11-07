@@ -76,8 +76,8 @@ const ImageGallery = ({ images }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.1, ease: 'easeInOut'}}
-              className={`fixed w-full inset-0 z-20 flex items-center justify-center transition-all duration-[100ms] opacity-100 ${selectedIndex ? " backdrop-grayscale	" : ""} `}
+              transition={{ duration: 0.8, ease: 'easeInOut'}}
+              className={`fixed w-full inset-0 z-20 flex items-center justify-center transition-all duration-[1200ms] ease-[cubic-bezier(0.95,0.05,0.795,0.035)] opacity-100 ${selectedIndex ? " backdrop-grayscale	" : ""} `}
             >
               <div className="relative flex justify-center items-center w-full h-full p-4">
                 <AnimComponent
@@ -96,7 +96,7 @@ const ImageGallery = ({ images }) => {
                     /* objectFit="contain" */
                     src={images[selectedIndex].src}
                     alt="fotinga"
-                    className="relative z-[60] p-2 transition-all duration-[1200ms]"
+                    className="relative max-w-fit  max-h-screen z-[60] p-2 transition-all duration-[1200ms]"
 
                   />
                   {/* <div className={`w-full z-[50] top-0 left-0 absolute h-full bg-green-300 transition-all duration-[1200ms]  ${selectedIndex ? "bg-opacity-40 translate-y-0" : "bg-opacity-0 translate-y-[20vh]"} `}>

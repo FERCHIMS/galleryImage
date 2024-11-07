@@ -29,9 +29,6 @@ const BannerHome = () => {
                 >
                     <p className="text-white font-light w-[50%] tracking-widest leading-[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatem officiis neque eum amet, explicabo vitae reiciendis corporis aspernatur maxime nisi sequi doloribus pariatur nam debitis est non quam sit!</p>
                 </Text>
-                
-                    
-                
             </div>
             <AnimComponent
                     esto="opacity-0"

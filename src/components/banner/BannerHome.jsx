@@ -11,21 +11,21 @@ const BannerHome = () => {
                 <Text
                     esto="opacity-100 "
                     otro="opacity-[10%] "
-                    className="transition-all duration-[1200ms]"
+                    className="transition-all  h-fit overflow-hidden duration-[1200ms]"
                 >
                     <AnimComponent
                         esto="translate-y-[0vh]"
                         otro="translate-y-[5vh]"
-                        className="transition-all  h-full w-fit duration-[1200ms]"
+                        className="transition-all h-full w-fit duration-[1200ms] ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
                     >
-                        <h2 className="text-[4rem] text-white tracking-widest font-black leading-[0.8]">TEXTO DE PRUEBA</h2>
+                        <h2 className="text-[4rem] text-white tracking-widest font-black leading-[0.9]">TEXTO DE PRUEBA</h2>
                     </AnimComponent>
                 </Text>
                 <Text
 
                     esto="opacity-100 "
-                    otro="opacity-[10%] "
-                    className="w-fit transition-all duration-[1200ms]"
+                    otro="opacity-[0%] "
+                    className="w-fit transition-all delay-[1000ms] duration-[1200ms]"
                 >
                     <p className="text-white font-light w-[50%] tracking-widest leading-[1]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatem officiis neque eum amet, explicabo vitae reiciendis corporis aspernatur maxime nisi sequi doloribus pariatur nam debitis est non quam sit!</p>
                 </Text>

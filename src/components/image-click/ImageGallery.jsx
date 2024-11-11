@@ -96,7 +96,7 @@ const ImageGallery = ({ images }) => {
                     /* objectFit="contain" */
                     src={images[selectedIndex].src}
                     alt="fotinga"
-                    className="relative max-w-fit  max-h-screen z-[60] p-2 transition-all duration-[1200ms]"
+                    className="relative w-full  h-fit sm450:max-w-fit sm450:max-h-screen z-[60] p-2 transition-all duration-[1200ms]"
 
                   />
                   {/* <div className={`w-full z-[50] top-0 left-0 absolute h-full bg-green-300 transition-all duration-[1200ms]  ${selectedIndex ? "bg-opacity-40 translate-y-0" : "bg-opacity-0 translate-y-[20vh]"} `}>
@@ -120,3 +120,5 @@ const ImageGallery = ({ images }) => {
 };
 
 export default ImageGallery;
+
+

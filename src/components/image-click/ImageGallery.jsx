@@ -83,9 +83,9 @@ const ImageGallery = ({ images }) => {
                 <AnimComponent
                   esto="opacity-100"
                   otro="opacity-0"
-                  className="transition-all duration-[1000ms] flex justify-center"
-                  rootMargin="-100px"
-                  threshold="0.5"
+                  className="transition-all duration-[1000ms] aspect-auto flex justify-center"
+                  /* rootMargin="-100px"
+                  threshold="0.5" */
 
                 >
                   <Image
@@ -96,7 +96,7 @@ const ImageGallery = ({ images }) => {
                     /* objectFit="contain" */
                     src={images[selectedIndex].src}
                     alt="fotinga"
-                    className="relative w-[80%] h-fit sm450:w-[100%] sm450:max-w-fit sm450:max-h-screen  z-[60] p-2 transition-all duration-[1200ms]"
+                    className="relative h-fit w-[100%] max-w-fit max-h-screen  z-[60] p-2 transition-all duration-[1200ms]"
 
                   />
                   {/* <div className={`w-full z-[50] top-0 left-0 absolute h-full bg-green-300 transition-all duration-[1200ms]  ${selectedIndex ? "bg-opacity-40 translate-y-0" : "bg-opacity-0 translate-y-[20vh]"} `}>
@@ -123,3 +123,4 @@ export default ImageGallery;
 
 
 /* className="relative w-full h-fit sm450:max-w-fit sm450:max-h-screen  z-[60] p-2 transition-all duration-[1200ms]" */
+/* className="relative w-[90%] h-fit  sm450:w-[100%] sm450:max-w-fit sm450:max-h-screen  z-[60] p-2 transition-all duration-[1200ms]" */

@@ -8,13 +8,13 @@ import AnimComponent from "../anim-component/AnimComponent"
 const images = [
     {
         title: "foto1",
-        src: "https://iili.io/2TIrG7S.jpg"
+        src: "https://iili.io/djh8UZv.png"
     },
     {
         title: "foto2",
-        src: "https://iili.io/2TIrMk7.jpg"
+        src: "https://iili.io/dOf2QAg.png"
     },
-    {
+    /* {
         title: "foto3",
         src: "https://iili.io/2TIrVp9.jpg"
     },
@@ -33,57 +33,83 @@ const images = [
     {
         title: "foto7",
         src: "https://iili.io/2TIQNN2.png"
-    },
+    }, */
 ]
 
 const HorizontGallery = () => {
-    /* const scrollWrapper = useRef(null);
-    const scrollContent = useRef(null); */
-    
-
-    /* useEffect(() => {
-        const lenis = new Lenis({
-            wrapper: scrollWrapper.current,
-            content: scrollContent.current,
-            orientation: 'horizontal',
-            gestureOrientation: 'horizontal',
-
-        })
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
-        return () => {
-            lenis.destroy()
-        }
-    }, []) */
     const targetRef = useRef(null);
+    const scrollWrapper = useRef(null);
+    const scrollContent = useRef(null);
 
     const { scrollYProgress } = useScroll({
         target: targetRef,
     })
 
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"])
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${images.length * 110}%`]);
 
+    useEffect(() => {
+        if (!scrollWrapper.current || !scrollContent.current) return;
+        
+        const lenis = new Lenis({
+            wrapper: scrollWrapper.current,
+            content: scrollContent.current,
+            orientation: 'horizontal',
+            gestureOrientation: 'horizontal',
+            lerp: 0.1,
+        });
+
+        function raf(time) {
+            lenis.raf(time * 10000);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
+    
+
+    
+    
+    
 
     return (
         <AnimComponent
-        ref={targetRef}
-        className="relative h-[900vh] bg-neutral-900"
-
+            className="transition-all delay-300 duration-[1200ms]"
+            esto="opacity-100"
+            otro="opacity-0"
+            rootMargin="0px"
         >
-        
-            <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-                <motion.div style={{x}} className="flex gap-4">
-                    {images.map((image) => (
-
-                        <Image key={image.title} className="" src={image.src} width={500} height={500} alt="fotos galeria" />
-
-                    ))}
-                </motion.div>
+            <div ref={targetRef} className="relative w-full h-[400vh] bg-neutral-900">
+                <div
+                    ref={scrollWrapper}
+                    style={{
+                        backgroundImage: `url("https://iili.io/2uJb1Qn.jpg")`,
+                        backgroundRepeat: "no-repeat",
+                        /* backgroundSize: "cover", */
+                    }}
+                    className="sticky flex bg-center bg-cover sm:bg-contain  top-0 w-full h-[100vh] overflow-hidden"
+                >
+                    <motion.div
+                        ref={scrollContent}
+                        style={{ x }}
+                        className={`flex gap-[10%] h-screen`}
+                    >
+                        {images.map((image) => (
+                            <Image
+                                key={image.title}
+                                className="w-full h-full object-cover"
+                                src={image.src}
+                                width={700}
+                                height={700}
+                                alt="fotos galeria"
+                            />
+                        ))}
+                    </motion.div>
+                </div>
             </div>
-        
         </AnimComponent>
     )
 }

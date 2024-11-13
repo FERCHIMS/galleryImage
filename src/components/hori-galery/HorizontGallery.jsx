@@ -12,7 +12,7 @@ const images = [
     },
     {
         title: "foto2",
-        src: "https://iili.io/dOf2QAg.png"
+        src: "https://iili.io/djh8UZv.png"
     },
     /* {
         title: "foto3",
@@ -45,9 +45,9 @@ const HorizontGallery = () => {
         target: targetRef,
     })
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${images.length * 110}%`]);
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${images.length * 50}%`]);
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (!scrollWrapper.current || !scrollContent.current) return;
         
         const lenis = new Lenis({
@@ -59,7 +59,7 @@ const HorizontGallery = () => {
         });
 
         function raf(time) {
-            lenis.raf(time * 10000);
+            lenis.raf(time);
             requestAnimationFrame(raf);
         }
 
@@ -68,7 +68,7 @@ const HorizontGallery = () => {
         return () => {
             lenis.destroy();
         };
-    }, []);
+    }, []); */
     
 
     
@@ -82,7 +82,7 @@ const HorizontGallery = () => {
             otro="opacity-0"
             rootMargin="0px"
         >
-            <div ref={targetRef} className="relative w-full h-[400vh] bg-neutral-900">
+            <div ref={targetRef} className="relative w-full h-[600vh] bg-neutral-900">
                 <div
                     ref={scrollWrapper}
                     style={{
@@ -95,17 +95,20 @@ const HorizontGallery = () => {
                     <motion.div
                         ref={scrollContent}
                         style={{ x }}
-                        className={`flex gap-[10%] h-screen`}
+                        className={`flex gap-10 filter backdrop-hue-rotate-180 opacity-30 h-screen`}
                     >
                         {images.map((image) => (
+                            
+                            <div key={image.title}>
                             <Image
-                                key={image.title}
+                                
                                 className="w-full h-full object-cover"
                                 src={image.src}
                                 width={700}
                                 height={700}
                                 alt="fotos galeria"
                             />
+                            </div>
                         ))}
                     </motion.div>
                 </div>
@@ -117,8 +120,15 @@ const HorizontGallery = () => {
 export default HorizontGallery
 
 
-/* {images.map((image) => (
-    <div key={image.title} className="flex-shrink-0 px-1 bg-orange-300 w-3/4 max-h-[50vh] aspect-video">
-        <Image className="w-full h-full object-cover" src={image.src} width={500} height={500} alt="fotos galeria" />
-    </div>
-))} */
+{/* <Image
+                                
+                                className="w-full h-full object-cover"
+                                src={image.src}
+                                width={700}
+                                height={700}
+                                alt="fotos galeria"
+                            /> */}
+
+                            {/* <video key={image.title} autoPlay muted loop>
+                                <source className="w-full h-screen object-cover" src={image.src} type="video/mp4" />
+                            </video> */}

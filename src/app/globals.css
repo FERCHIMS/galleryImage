@@ -7,6 +7,11 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+ /*  background-color: bg-[#20201E] ; */
+}
+
+body {
+  background-color: #171717;
 }
 
 .hide-scrollbar {

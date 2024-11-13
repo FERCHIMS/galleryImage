@@ -47,11 +47,13 @@ const ImageGallery = ({ images }) => {
             <AnimComponent
               esto="opacity-100 filter blur-0 contrast-100 invert-0"
               otro="opacity-[45%] filter blur-[2px] contrast-200 invert-[20%] "
-              className="  transition-all duration-[1200ms]  "
+              className="w-full relative transition-all duration-[1200ms]  "
               rootMargin="-50px"
               threshold="0.5"
               key={index}
+              /* style={{aspectRatio: "1/0.5"}} */
             >
+              
               <Image
                 width={700}
                 height={700}

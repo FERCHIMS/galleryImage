@@ -22,3 +22,31 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* ********** responsive para /mas photos ************** */
+.responsive-style {
+  flex: 1 1 20%;
+  aspect-ratio: 16/9;
+}
+
+
+@media (max-width: 1536px) {
+  .responsive-style {
+    /* padding-bottom: 10%; */
+    flex: 1 1 30%;
+    aspect-ratio: 1/1;
+  }
+}
+@media (max-width: 1280px) {
+  .responsive-style {
+    flex: 1 1 40%;
+    aspect-ratio: 1/1;
+  }
+}
+@media (max-width: 768px) {
+  .responsive-style {
+    flex: 1 1 50%;
+    aspect-ratio: 1.3/1.6;
+  }
+}
+/* **************************************** */

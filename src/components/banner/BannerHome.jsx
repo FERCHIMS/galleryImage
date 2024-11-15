@@ -15,8 +15,8 @@ const BannerHome = () => {
                 >
                     <AnimComponent
                         esto="translate-y-[0vh]"
-                        otro="translate-y-[5vh]"
-                        className="transition-all h-full w-fit duration-[1200ms] ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
+                        otro="translate-y-[7vh]"
+                        className="transition-all h-full w-fit delay-500 duration-[1200ms] ease-[cubic-bezier(0.76, 0, 0.24, 1)]"
                     >
                         <h2 className="text-[4rem] text-white tracking-widest font-black leading-[0.9]">TEXTO DE PRUEBA</h2>
                     </AnimComponent>

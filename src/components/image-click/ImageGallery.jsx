@@ -38,13 +38,17 @@ const ImageGallery = ({ images }) => {
     };
   }, [selectedIndex]); */
 
+  
+
+
   return (
     <div className="w-full">
-      <div className={`transition-all w-full flex justify-center flex-wrap duration-[1200ms] ${selectedIndex ? "scale-[96%] translate-y-[0.5rem]" : "scale-100 translate-y-0"} `}>
+      <div className={`transition-all w-full flex justify-center flex-wrap duration-[1200ms] ${selectedIndex !== null ? "scale-[96%] translate-y-[0.5rem] backdrop-grayscale" : "scale-100 translate-y-0"} `}>
 
         <GridComp className=''>
           {images.map((image, index) => (
             <AnimComponent
+            closeModal={closeModal}
               esto="opacity-100 filter blur-0 contrast-100 invert-0"
               otro="opacity-[45%] filter blur-[2px] contrast-200 invert-[20%] "
               className="w-full relative transition-all duration-[1200ms]  "
@@ -55,13 +59,14 @@ const ImageGallery = ({ images }) => {
             >
               
               <Image
+              
                 width={700}
                 height={700}
                 /* key={index} */
                 src={image.src}
                 alt="foto alt"
                 quality={50}
-                className={`rounded-[7rem] p-[4px] object-contain cursor-pointer transition-all duration-[1200ms] z-[60] ${selectedIndex ? "opacity-40 blur-[1em]" : "opacity-100 blur-none"} `}
+                className={`rounded-[7rem] p-[4px] object-contain cursor-pointer transition-all duration-[1200ms] z-[60] ${selectedIndex !== null ? "opacity-40 blur-[1em]" : "opacity-100 blur-none"} `}
                 onClick={() => openModal(index)}
               />
             </AnimComponent>
@@ -72,14 +77,12 @@ const ImageGallery = ({ images }) => {
       <AnimatePresence>
         {selectedIndex !== null && (
           <div className='w-full flex justify-center'>
-
             <m.div
-
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: 'easeInOut'}}
-              className={`fixed w-full inset-0 z-20 flex items-center justify-center transition-all duration-[1200ms] ease-[cubic-bezier(0.95,0.05,0.795,0.035)] opacity-100 ${selectedIndex ? " backdrop-grayscale	" : ""} `}
+              className={`fixed w-full inset-0 z-20 flex items-center justify-center transition-all duration-[1200ms] ease-[cubic-bezier(0.95,0.05,0.795,0.035)] opacity-100 ${"backdrop-grayscale"}`}
             >
               <div className="relative flex justify-center items-center w-full h-full p-4">
                 <AnimComponent
@@ -88,7 +91,7 @@ const ImageGallery = ({ images }) => {
                   className="transition-all duration-[1000ms] aspect-auto flex justify-center"
                   /* rootMargin="-100px"
                   threshold="0.5" */
-
+                  
                 >
                   <Image
                     quality={100}
@@ -99,7 +102,7 @@ const ImageGallery = ({ images }) => {
                     src={images[selectedIndex].src}
                     alt="fotinga"
                     className="relative h-fit w-[100%] max-w-fit max-h-screen  z-[60] p-2 transition-all duration-[1200ms]"
-
+                    
                   />
                   {/* <div className={`w-full z-[50] top-0 left-0 absolute h-full bg-green-300 transition-all duration-[1200ms]  ${selectedIndex ? "bg-opacity-40 translate-y-0" : "bg-opacity-0 translate-y-[20vh]"} `}>
 
@@ -122,7 +125,3 @@ const ImageGallery = ({ images }) => {
 };
 
 export default ImageGallery;
-
-
-/* className="relative w-full h-fit sm450:max-w-fit sm450:max-h-screen  z-[60] p-2 transition-all duration-[1200ms]" */
-/* className="relative w-[90%] h-fit  sm450:w-[100%] sm450:max-w-fit sm450:max-h-screen  z-[60] p-2 transition-all duration-[1200ms]" */

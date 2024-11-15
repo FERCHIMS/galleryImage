@@ -11,6 +11,10 @@ const links = [
         title: "Pruebas",
         href: "/pruebas"
     },
+    {
+        title: "Mas",
+        href: "/mas"
+    },
 
 ]
 

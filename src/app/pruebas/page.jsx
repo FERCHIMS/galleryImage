@@ -16,8 +16,8 @@ const Pruebas = () => {
       //IMAGENES PARA QUE CARGUEN EN SU ESPACIO
       <div className="flex w-full gap-5 justify-center flex-wrap bg-neutral-900">
         {[...Array(20)].map((_, index) => (
-          <div key={index} className="relative w-[500px]" style={{aspectRatio: "1/0.5"}}>
-            <Image className="w-[20%]"  src="https://iili.io/2TIrVp9.jpg" objectFit="cover" layout="fill"  alt="foto" />
+          <div key={index} className="relative w-full" style={{aspectRatio: "1/1"}}>
+            <Image className="w-[100%]"  src="https://iili.io/2TIrVp9.jpg" objectFit="cover" layout="fill"  alt="foto" />
           </div>
         ))}
 

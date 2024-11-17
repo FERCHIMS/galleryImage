@@ -29,8 +29,33 @@ const DropNav = () => {
         setIsDrop(false)
     }
 
+    useEffect(() => {
+        if (isDrop) {
+            document.body.classList.add("overflow-hidden");
+        }else {
+            document.body.classList.remove("overflow-hidden");
+        }
+        return () => {
+            document.body.classList.remove("overflow-hidden");
+        }
+
+    }, [isDrop])
+
+    /* useEffect(() => {
+        if (isDrop) {
+          document.body.classList.add('overflow-hidden');
+        } else {
+          document.body.classList.remove('overflow-hidden');
+        }
+    
+       
+        return () => {
+          document.body.classList.remove('overflow-hidden');
+        };
+      }, [isDrop]);
+ */
     return (
-        <div className={`block lg:hidden fixed w-full h-screen z-50  overflow-hidden delay-300 ${isDrop ? "pointer-events-auto" : "pointer-events-none"} `} >
+        <div className={`block lg:hidden fixed w-full h-screen z-50  overflow-hidden delay-300 ${isDrop ? "pointer-events-auto overflow-y-auto" : "pointer-events-none"} `} >
             <div onClick={handleDrop} className="bg-pink-300 pointer-events-auto  w-[50px] h-[50px] flex justify-center items-center ">
                 <div className="z-50 bg-pink-300 w-[50px] h-[50px] flex justify-center items-center">
                     <h1 className="text-white  text-[2rem]">X</h1>

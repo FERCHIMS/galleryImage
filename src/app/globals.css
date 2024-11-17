@@ -51,16 +51,3 @@ body {
 }
 /* **************************************** */
 
-/* .bar-progress-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-} */
-.color-textito {
-  height: 100vh;
-  background-color: red;
-  color: aliceblue;
-  font-size: 3rem;
-  width: 100vw;
-}

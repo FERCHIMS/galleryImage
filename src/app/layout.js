@@ -1,3 +1,4 @@
+
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header/Header";
@@ -30,14 +31,12 @@ export default function RootLayout({ children }) {
       >
         <NextTopLoader
           color="white"
-          initialPosition={0.08}
           crawlSpeed={200}
           height={1}
           crawl={true}
           showSpinner={false}
           easing="ease"
           speed={500}
-          shadow=""
           template='
           <div class="bar  bar-progress-top" role="bar">
             

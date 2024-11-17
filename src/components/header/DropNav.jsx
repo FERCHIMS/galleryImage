@@ -15,7 +15,7 @@ const links = [
     {
         title: "Mas",
         href: "/mas"
-    }
+    },
 ]
 
 const DropNav = () => {
@@ -66,7 +66,7 @@ const DropNav = () => {
                 <div className={`z-30 absolute transition-transform h-screen inset-0 duration-700  ${isDrop ? "translate-y-[0%] pointer-events-auto" : "translate-y-[100%] pointer-events-none"} `}>
                     <div
 
-                        className="flex flex-col justify-normal items-center h-screen bg-black">
+                        className="flex flex-col justify-normal items-center min-h-screen h-fit bg-black">
                         {links.map((link) => (
                             <li onClick={removeDrop} key={link.title} className="flex">
                                 <Link className="text-[3rem] text-white font-black delay-200 transition-all duration-[1200ms]" href={link.href} >
@@ -78,8 +78,35 @@ const DropNav = () => {
                                 >{link.title}
                                 </motion.h2>
                                 </Link>
+                                
                             </li>
                         ))}
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        <h2 className="text-[3rem] text-white font-black">LOCAL LO</h2>
+                        
                     </div>
                 </div>
             </AnimatePresence>

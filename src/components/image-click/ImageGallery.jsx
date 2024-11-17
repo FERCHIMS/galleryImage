@@ -113,7 +113,7 @@ const ImageGallery = ({ images }) => {
                     
                   />
                   
-                  <div onClick={closeModal} className={`absolute right-[1] blur-[10em] w-[150%] h-[200%] z-[10] bg-black transition-all duration-[1200ms] ${selectedIndex !== null ? "opacity-100" : "opacity-0"} `}></div>
+                  <div onClick={closeModal} className={`absolute right-[1] blur-[10em] w-[150%] h-[200%] z-[10] bg-black transition-all duration-[1200ms] delay-700 ${selectedIndex !== null ? "opacity-100" : "opacity-0"} `}></div>
                 </AnimComponent>
                 <BotonesModal className='z-[10] w-fit h-fit' closeModal={closeModal} selectedImage={images[selectedIndex].src} />
 

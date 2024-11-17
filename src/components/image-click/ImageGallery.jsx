@@ -103,17 +103,17 @@ const ImageGallery = ({ images }) => {
                 >
                   <Image
                     quality={100}
-                    /* layout="responsive" */
+                    
                     width={500}
                     height={500}
-                    /* objectFit="contain" */
+                    
                     src={images[selectedIndex].src}
                     alt="fotinga"
                     className="relative h-fit w-[100%] z-20 max-w-fit max-h-screen p-2 transition-all duration-[1200ms]"
                     
                   />
                   
-                  <div onClick={closeModal} className={`absolute right-[1] blur-[10em] w-[150%] h-[200%] z-[10] bg-black`}></div>
+                  <div onClick={closeModal} className={`absolute right-[1] blur-[10em] w-[150%] h-[200%] z-[10] bg-black transition-all duration-[1200ms] ${selectedIndex !== null ? "opacity-100" : "opacity-0"} `}></div>
                 </AnimComponent>
                 <BotonesModal className='z-[10] w-fit h-fit' closeModal={closeModal} selectedImage={images[selectedIndex].src} />
 

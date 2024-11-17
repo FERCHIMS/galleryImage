@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import LenisScroll from "@/components/lenis-scroll/LenisScroll";
 import DropNav from "@/components/header/DropNav";
+import NextTopLoader from 'nextjs-toploader';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,15 +24,32 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NextTopLoader
+          color="white"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={1}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={500}
+          shadow=""
+          template='
+          <div class="bar  bar-progress-top" role="bar">
+            
+        </div>'
+          zIndex={1600}
+          showAtBottom={false}
+        />
         <LenisScroll>
-        <DropNav />  
-        <Header />
-        {children}
-      </LenisScroll>
+          <DropNav />
+          <Header />
+          {children}
+        </LenisScroll>
       </body>
     </html>
   );
